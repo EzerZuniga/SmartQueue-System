@@ -1,101 +1,209 @@
-# Colas V2 - Sistema de Gestión de Colas
+# SmartQueue System (Colas V2)
 
-Este es un sistema de gestión de colas moderno construido con Laravel y Vue.js. Permite a las organizaciones gestionar las colas de clientes de manera eficiente, brindando una experiencia fluida tanto para el ciudadano como para el operador.
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Vue](https://img.shields.io/badge/Vue-3-42B883?style=for-the-badge&logo=vue.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.2-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind](https://img.shields.io/badge/TailwindCSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-2ea44f?style=for-the-badge)
 
-## Tecnologías Utilizadas
-
-La aplicación se basa en un stack de tecnología moderno, separando el backend y el frontend e integrándolos con Inertia.js.
-
-### Backend
-- **PHP 8.2+**
-- **Laravel 12**: El framework principal de la aplicación.
-- **Laravel Reverb**: Servidor de WebSockets de alto rendimiento para comunicación en tiempo real.
-- **Laravel Wayfinder**: Para la construcción automática de rutas en el frontend.
-- **Spatie Permission**: Gestión de roles y permisos (RBAC).
-- **Pest**: Framework de pruebas enfocado en la simplicidad.
-
-### Frontend
-- **Vue.js 3 (Composition API)**: Framework interactivo para la UI.
-- **TypeScript**: Tipado estático para un código más robusto.
-- **Vite**: Herramienta de compilación ultrarrápida.
-- **Inertia.js**: Une Laravel y Vue sin necesidad de crear una API REST compleja.
-- **Tailwind CSS**: Estilizado basado en utilidades.
-- **Shadcn-Vue**: Biblioteca de componentes de alta calidad.
-- **Lucide Icons**: Set de iconos consistente.
+Plataforma integral para gestión de turnos y atención al ciudadano, construida con Laravel + Inertia + Vue.  
+El sistema cubre el ciclo completo de colas: emisión de tickets, llamada por ventanilla, atención, derivación, métricas y reportes exportables, con notificaciones en tiempo real.
 
 ---
 
-## Flujo General del Proyecto
+## Tabla de contenidos
 
-El sistema gestiona el ciclo de vida completo de una atención:
-
-1.  **Emisión de Ticket (Kiosko)**: El cliente selecciona un servicio. El sistema genera un ticket (ej. `A-001`) y calcula su posición usando un algoritmo de "Cremallera" (intercalando Normal y Preferencial).
-2.  **Espera Activa**: El ticket entra en estado `waiting`. Los clientes pueden ver su turno en la pantalla de TV.
-3.  **Llamada (Operador)**: El operador desde su ventanilla llama al siguiente ticket. El estado cambia a `calling` y se notifica en tiempo real vía WebSockets.
-4.  **Atención**: Una vez el cliente llega, el operador inicia la atención (`in_progress`).
-5.  **Derivación (Opcional)**: Si el trámite requiere otro área, el operador puede **Derivar** el ticket. El ticket mantiene su antigüedad original pero se le antepone una **"D"** (ej. `DA-001`) para identificarlo como derivado en el nuevo servicio.
-6.  **Finalización**: La atención se marca como `completed`, registrando tiempos de espera y atención para analítica.
+1. [Características clave](#características-clave)
+2. [Arquitectura y stack](#arquitectura-y-stack)
+3. [Flujo de negocio](#flujo-de-negocio)
+4. [Comenzar](#comenzar)
+5. [Scripts disponibles](#scripts-disponibles)
+6. [Configuración de entorno](#configuración-de-entorno)
+7. [Tiempo real, colas y scheduler](#tiempo-real-colas-y-scheduler)
+8. [Estructura del proyecto](#estructura-del-proyecto)
+9. [Calidad y pruebas](#calidad-y-pruebas)
+10. [Documentación funcional](#documentación-funcional)
+11. [Contribución](#contribución)
+12. [Licencia](#licencia)
 
 ---
 
-## Instalación y Ejecución
+## Características clave
 
-### 1. Requisitos Previos
+- **Gestión operativa de turnos**: emisión de tickets por servicio, atención por ventanilla y seguimiento de estados (`waiting`, `calling`, `in_progress`, `completed`, `no_show`, `transferred`).
+- **Algoritmo de prioridad tipo cremallera**: balance automático entre atención normal y preferencial.
+- **Derivación de tickets**: transferencia entre servicios manteniendo antigüedad para no penalizar al ciudadano.
+- **Kiosko con validaciones**: soporte de DNI/RUC, cooldown configurable y excepciones de operación.
+- **Tablero y visualización pública**: pantalla de TV y dashboard con métricas de demanda/distribución.
+- **Reportería y exportación**: reportes de tickets, llamadas y rendimiento con exportación a Excel.
+- **Seguridad y control de acceso**: autenticación con Fortify, 2FA y RBAC con Spatie Permission.
+- **Eventos en tiempo real**: notificaciones y actualizaciones operativas mediante Laravel Reverb.
+
+## Arquitectura y stack
+
+| Capa | Tecnologías | Descripción |
+| --- | --- | --- |
+| Backend | Laravel 12, PHP 8.2+, Eloquent ORM | Lógica de negocio, reglas operativas, autorización y persistencia. |
+| Frontend | Vue 3, TypeScript, Inertia.js | SPA server-driven con páginas modulares y tipado fuerte. |
+| UI | Tailwind CSS 4, Radix/Reka, componentes reutilizables | Interfaz administrativa moderna y consistente. |
+| Tiempo real | Laravel Reverb, Broadcasting, Notifications | Actualización de llamados, tickets y alertas en vivo. |
+| Datos y reportes | MySQL/PostgreSQL (compatible), Maatwebsite Excel | Registro transaccional y exportación analítica. |
+| Calidad | Pest, Laravel Pint, ESLint, Prettier | Pruebas, formato y consistencia en CI/CD. |
+
+## Flujo de negocio
+
+1. **Emisión de ticket (kiosko)**: el ciudadano selecciona servicio y el sistema genera ticket (ej. `A-001`).
+2. **En cola**: el ticket entra en espera con posición calculada por prioridad.
+3. **Llamado por operador**: desde ventanilla se llama el siguiente ticket disponible.
+4. **Atención**: el operador inicia y finaliza la atención, registrando tiempos.
+5. **Derivación opcional**: si aplica, el ticket se transfiere a otro servicio conservando antigüedad.
+6. **Cierre y analítica**: la operación queda trazada para reportes y monitoreo.
+
+## Comenzar
+
+### Requisitos previos
+
 - PHP 8.2 o superior
-- Node.js & NPM
-- Composer
+- Composer 2.x
+- Node.js 18 LTS o superior
+- npm 9+ (o yarn/pnpm equivalente)
+- Base de datos relacional configurada (MySQL/PostgreSQL)
 
-### 2. Configuración Inicial
+### Instalación rápida
+
 ```bash
-# Clonar y entrar al proyecto
+# 1) Clonar repositorio
 git clone <url-del-repositorio>
-cd colas
+cd SmartQueue-System
 
-# Instalar dependencias
+# 2) Dependencias
 composer install
 npm install
 
-# Configurar entorno
+# 3) Entorno
 cp .env.example .env
 php artisan key:generate
-```
-*Configura tu base de datos y credenciales de Reverb en el `.env`.*
 
-### 3. Base de Datos
-```bash
+# 4) Migraciones y seeders
 php artisan migrate --seed
 ```
 
-### 4. Ejecución en Desarrollo
-Para poner en marcha el sistema, necesitas ejecutar dos procesos principales en terminales separadas:
+También puedes usar el flujo automatizado:
 
-**Terminal 1 (Servidor y Vite):**
+```bash
+composer setup
+```
+
+### Desarrollo local
+
+Terminal 1:
+
 ```bash
 composer dev
 ```
-*(Este comando levanta automáticamente `php artisan serve`, `queue:listen` y `vite`)*
 
-**Terminal 2 (WebSockets):**
+Terminal 2 (tiempo real):
+
 ```bash
 php artisan reverb:start
 ```
 
----
+Aplicación disponible por defecto en `http://127.0.0.1:8000`.
 
-## Comandos Útiles de Calidad
+## Scripts disponibles
 
-Para mantener el código limpio y funcional, utiliza estos comandos antes de realizar un commit:
+### Composer
 
-### Estilo y Calidad de Código
-- **PHP Linting**: `composer pint` (Aplica el estilo estándar de Laravel).
-- **JS/Vue Linting**: `npm run lint` o `npm run format`.
+| Comando | Descripción |
+| --- | --- |
+| `composer setup` | Instalación y bootstrap inicial (dependencias, `.env`, key, migración y build). |
+| `composer dev` | Levanta `artisan serve`, `queue:listen` y `vite` en paralelo. |
+| `composer dev:ssr` | Modo SSR con procesos de servidor, cola, logs y renderer SSR. |
+| `composer test` | Limpia caché de config y ejecuta pruebas. |
+| `composer pint` | Formateo y estilo de código PHP. |
 
-### Pruebas y Compilación
-- **Ejecutar Tests**: `php artisan test` o `composer test`.
-- **Compilar para Producción**: `npm run build`.
+### npm
 
----
+| Comando | Descripción |
+| --- | --- |
+| `npm run dev` | Servidor Vite para frontend en desarrollo. |
+| `npm run build` | Build de producción. |
+| `npm run build:ssr` | Build cliente + servidor SSR. |
+| `npm run lint` | Linting de JS/TS/Vue con ESLint. |
+| `npm run format` | Formateo de `resources/` con Prettier. |
+| `npm run format:check` | Verificación de formato sin escribir cambios. |
 
-## Documentación Adicional
-- [Documentación de Base de Datos](./doc/database_documentation.md)
-- [Guía de Roles y Permisos](./doc/roles-permisos.md)
+## Configuración de entorno
+
+El archivo `.env` controla configuración sensible y operativa:
+
+- Conexión a base de datos
+- Credenciales de broadcasting/Reverb
+- Parámetros de correo/notificaciones
+- Ajustes del sistema (por ejemplo, límites y comportamiento de kiosko)
+
+Buenas prácticas:
+
+- No versionar `.env`
+- Usar secretos del proveedor CI/CD en producción
+- Mantener `.env.example` actualizado con variables obligatorias
+
+## Tiempo real, colas y scheduler
+
+- **Broadcasting**: eventos operativos (tickets, llamadas, dashboard) se publican en tiempo real.
+- **Queue worker**: requerido para procesamiento asíncrono de notificaciones y tareas relacionadas.
+- **Tareas programadas**: el sistema incluye comandos de mantenimiento y automatización diaria.
+
+Para ejecutar scheduler localmente:
+
+```bash
+php artisan schedule:work
+```
+
+## Estructura del proyecto
+
+```text
+SmartQueue-System/
+├── app/
+│   ├── Http/Controllers/     # Controladores de dominio (tickets, llamadas, reportes, etc.)
+│   ├── Models/               # Modelos de negocio
+│   ├── Events/               # Eventos de tiempo real
+│   ├── Notifications/        # Notificaciones del sistema
+│   ├── Policies/             # Autorización por recurso
+│   └── Console/Commands/     # Comandos programables
+├── database/                 # Migraciones, factories, seeders
+├── resources/js/
+│   ├── pages/                # Páginas Inertia (dashboard, tickets, servicios, reportes, etc.)
+│   ├── components/           # Componentes UI reutilizables
+│   ├── layouts/              # Layouts de aplicación
+│   └── routes/               # Rutas tipadas/wayfinder para frontend
+├── routes/                   # Definición de rutas web, settings, channels, console
+├── doc/                      # Documentación funcional y base de datos
+├── tests/                    # Suite de pruebas
+└── README.md
+```
+
+## Calidad y pruebas
+
+- Ejecuta `composer test` antes de abrir un PR.
+- Ejecuta `composer pint`, `npm run lint` y `npm run format:check`.
+- Mantén reglas de dominio en backend y UI desacoplada en frontend.
+- Revisa permisos/roles en cambios que involucren rutas o acciones críticas.
+
+## Documentación funcional
+
+- [Procesos de negocio](./doc/procesos.md)
+- [Documentación de base de datos](./doc/database_documentation.md)
+
+## Contribución
+
+1. Crea una rama desde `main` (`feature/...`, `fix/...`).
+2. Implementa cambios con pruebas y linting en verde.
+3. Documenta impacto funcional/técnico en el PR.
+4. Adjunta evidencia visual si hay cambios de UI u operación.
+
+## Licencia
+
+Este proyecto se distribuye bajo licencia **MIT**.  
+Consulta [LICENSE](./LICENSE) para más detalles.

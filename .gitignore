@@ -24,5 +24,10 @@ yarn-error.log
 /.fleet
 /.idea
 /.nova
+/.vs
 /.vscode
 /.zed
+/.npm-cache
+/.composer-cache
+/.agent
+/storage/logs/*.log
