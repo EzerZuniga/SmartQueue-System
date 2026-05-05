@@ -1,0 +1,180 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\js\\components\\dashboard\\StatCard.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\js\\components\\dashboard\\StatCard.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\js\\components\\dashboard\\DemandChart.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\js\\components\\dashboard\\DemandChart.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\js\\components\\AlertError.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\js\\components\\AlertError.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\js\\actions\\App\\Http\\Controllers\\CallController.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\js\\actions\\App\\Http\\Controllers\\CallController.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\views\\app.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\views\\app.blade.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\app\\Console\\Commands\\CheckOperationalAlerts.php||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:app\\Console\\Commands\\CheckOperationalAlerts.php||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\.editorconfig||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.editorconfig||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\.env.example||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.env.example||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StatCard.vue",
+              "DocumentMoniker": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\js\\components\\dashboard\\StatCard.vue",
+              "RelativeDocumentMoniker": "resources\\js\\components\\dashboard\\StatCard.vue",
+              "ToolTip": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\js\\components\\dashboard\\StatCard.vue",
+              "RelativeToolTip": "resources\\js\\components\\dashboard\\StatCard.vue",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2026-04-16T00:36:09.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DemandChart.vue",
+              "DocumentMoniker": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\js\\components\\dashboard\\DemandChart.vue",
+              "RelativeDocumentMoniker": "resources\\js\\components\\dashboard\\DemandChart.vue",
+              "ToolTip": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\js\\components\\dashboard\\DemandChart.vue",
+              "RelativeToolTip": "resources\\js\\components\\dashboard\\DemandChart.vue",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2026-04-16T00:35:57.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AlertError.vue",
+              "DocumentMoniker": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\js\\components\\AlertError.vue",
+              "RelativeDocumentMoniker": "resources\\js\\components\\AlertError.vue",
+              "ToolTip": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\js\\components\\AlertError.vue",
+              "RelativeToolTip": "resources\\js\\components\\AlertError.vue",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2026-04-16T00:35:43.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CallController.ts",
+              "DocumentMoniker": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\js\\actions\\App\\Http\\Controllers\\CallController.ts",
+              "RelativeDocumentMoniker": "resources\\js\\actions\\App\\Http\\Controllers\\CallController.ts",
+              "ToolTip": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\js\\actions\\App\\Http\\Controllers\\CallController.ts",
+              "RelativeToolTip": "resources\\js\\actions\\App\\Http\\Controllers\\CallController.ts",
+              "ViewState": "AgIAAKsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2026-04-16T00:35:17.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\css\\app.css",
+              "RelativeDocumentMoniker": "resources\\css\\app.css",
+              "ToolTip": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\css\\app.css",
+              "RelativeToolTip": "resources\\css\\app.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-04-16T00:34:49.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "app.blade.php",
+              "DocumentMoniker": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\views\\app.blade.php",
+              "RelativeDocumentMoniker": "resources\\views\\app.blade.php",
+              "ToolTip": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\resources\\views\\app.blade.php",
+              "RelativeToolTip": "resources\\views\\app.blade.php",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
+              "WhenOpened": "2026-04-16T00:34:16.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CheckOperationalAlerts.php",
+              "DocumentMoniker": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\app\\Console\\Commands\\CheckOperationalAlerts.php",
+              "RelativeDocumentMoniker": "app\\Console\\Commands\\CheckOperationalAlerts.php",
+              "ToolTip": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\app\\Console\\Commands\\CheckOperationalAlerts.php",
+              "RelativeToolTip": "app\\Console\\Commands\\CheckOperationalAlerts.php",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002338|",
+              "WhenOpened": "2026-04-16T00:33:36.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": ".env.example",
+              "DocumentMoniker": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\.env.example",
+              "RelativeDocumentMoniker": ".env.example",
+              "ToolTip": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\.env.example",
+              "RelativeToolTip": ".env.example",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-15T16:46:52.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": ".editorconfig",
+              "DocumentMoniker": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\.editorconfig",
+              "RelativeDocumentMoniker": ".editorconfig",
+              "ToolTip": "C:\\Users\\jose\\Downloads\\sistema-colas-master\\sistema-colas-master\\.editorconfig",
+              "RelativeToolTip": ".editorconfig",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-15T16:46:50.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

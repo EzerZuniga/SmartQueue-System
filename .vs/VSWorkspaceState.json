@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\resources",
+    "\\resources\\js",
+    "\\resources\\js\\actions",
+    "\\resources\\js\\actions\\App",
+    "\\resources\\js\\actions\\App\\Http",
+    "\\resources\\js\\actions\\App\\Http\\Controllers",
+    "\\resources\\js\\actions\\Laravel",
+    "\\resources\\js\\components",
+    "\\resources\\js\\components\\dashboard"
+  ],
+  "SelectedNode": "\\resources\\js\\components\\dashboard\\StatCard.vue",
+  "PreviewInSolutionExplorer": false
+}

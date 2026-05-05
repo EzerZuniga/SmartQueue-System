@@ -1,0 +1,91 @@
+<script setup lang="ts">
+import InputError from '@/components/InputError.vue';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Spinner } from '@/components/ui/spinner';
+import AppLayout from '@/layouts/AppLayout.vue';
+import { index, update } from '@/routes/permissions';
+import { type BreadcrumbItem } from '@/types';
+import { Head, Link, useForm } from '@inertiajs/vue3';
+import { Save } from 'lucide-vue-next';
+
+interface Permission {
+    id: number;
+    name: string;
+}
+
+const props = defineProps<{
+    permission: Permission;
+}>();
+
+const breadcrumbs: BreadcrumbItem[] = [
+    { title: 'Panel', href: '/dashboard' },
+    { title: 'Permisos', href: index.url() },
+    { title: 'Editar Permiso', href: '' },
+];
+
+const form = useForm({
+    name: props.permission.name,
+});
+
+const submit = () => {
+    form.put(update.url({ permission: props.permission.id }));
+};
+</script>
+
+<template>
+    <AppLayout :breadcrumbs="breadcrumbs">
+        <Head :title="`Editar ${permission.name}`" />
+
+        <div class="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2
+                        class="text-lg font-bold text-neutral-900 dark:text-neutral-100"
+                    >
+                        Editar Permiso: {{ permission.name }}
+                    </h2>
+                    <p class="text-sm text-neutral-500">
+                        Modifica el nombre del permiso
+                    </p>
+                </div>
+            </div>
+
+            <form @submit.prevent="submit" class="space-y-6">
+                <div class="rounded-lg border p-4 shadow-sm">
+                    <div class="grid gap-4">
+                        <div class="grid w-full items-center gap-1.5">
+                            <Label for="name">Nombre del Permiso</Label>
+                            <Input
+                                id="name"
+                                v-model="form.name"
+                                type="text"
+                                placeholder="Ej: users.delete"
+                                :class="{ 'border-red-500': form.errors.name }"
+                            />
+                            <InputError :message="form.errors.name" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-end gap-4">
+                    <Link :href="index.url()">
+                        <Button
+                            variant="outline"
+                            type="button"
+                            :disabled="form.processing"
+                        >
+                            Cancelar
+                        </Button>
+                    </Link>
+                    <Button :disabled="form.processing" type="submit">
+                        <Save class="mr-2 h-4 w-4" v-if="!form.processing" />
+                        <Spinner v-if="form.processing" />
+                        Actualizar Permiso
+                    </Button>
+                </div>
+            </form>
+        </div>
+    </AppLayout>
+</template>
