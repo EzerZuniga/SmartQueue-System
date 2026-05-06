@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button } from '@/components/ui/button';
+import { Button } from '@/shared/components/ui/button';
 import { dashboard, login } from '@/routes';
 import { Head, Link } from '@inertiajs/vue3';
 import {

@@ -13,8 +13,8 @@ import {
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogTitle,
-} from '@/components/ui/alert-dialog';
-import { Button } from '@/components/ui/button';
+} from '@/shared/components/ui/alert-dialog';
+import { Button } from '@/shared/components/ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -22,8 +22,8 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { usePermissions } from '@/composables/usePermissions';
+} from '@/shared/components/ui/dropdown-menu';
+import { usePermissions } from '@/shared/composables/usePermissions';
 
 const { can } = usePermissions();
 

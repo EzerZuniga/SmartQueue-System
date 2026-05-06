@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import DemandChart from '@/components/dashboard/DemandChart.vue';
-import DistributionChart from '@/components/dashboard/DistributionChart.vue';
-import OperatorGrid from '@/components/dashboard/OperatorGrid.vue';
-import StatCard from '@/components/dashboard/StatCard.vue';
-import AppLayout from '@/layouts/AppLayout.vue';
+import DemandChart from '@/shared/components/dashboard/DemandChart.vue';
+import DistributionChart from '@/shared/components/dashboard/DistributionChart.vue';
+import OperatorGrid from '@/shared/components/dashboard/OperatorGrid.vue';
+import StatCard from '@/shared/components/dashboard/StatCard.vue';
+import AppLayout from '@/shared/layouts/AppLayout.vue';
 import { dashboard } from '@/routes';
 import { stats as StatsRoute } from '@/routes/dashboard';
-import { type BreadcrumbItem } from '@/types';
-import { DashboardStats } from '@/types/dashboard';
+import { type BreadcrumbItem } from '@/shared/types';
+import { DashboardStats } from '@/shared/types/dashboard';
 import { Head } from '@inertiajs/vue3';
 import axios from 'axios';
 import { onMounted, onUnmounted, ref } from 'vue';

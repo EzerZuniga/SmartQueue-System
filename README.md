@@ -174,10 +174,12 @@ SmartQueue-System/
 │   └── Console/Commands/     # Comandos programables
 ├── database/                 # Migraciones, factories, seeders
 ├── resources/js/
-│   ├── pages/                # Páginas Inertia (dashboard, tickets, servicios, reportes, etc.)
-│   ├── components/           # Componentes UI reutilizables
-│   ├── layouts/              # Layouts de aplicación
-│   └── routes/               # Rutas tipadas/wayfinder para frontend
+│   ├── core/                 # Entrypoints de frontend (app/ssr)
+│   ├── pages/                # Páginas Inertia (mapeadas desde backend)
+│   ├── shared/               # Reutilizables: components, layouts, composables, lib, types
+│   ├── routes/               # Rutas tipadas para frontend (wayfinder)
+│   ├── actions/              # Actions generadas para consumo tipado
+│   └── wayfinder/            # Configuración/integración de wayfinder
 ├── routes/                   # Definición de rutas web, settings, channels, console
 ├── doc/                      # Documentación funcional y base de datos
 ├── tests/                    # Suite de pruebas

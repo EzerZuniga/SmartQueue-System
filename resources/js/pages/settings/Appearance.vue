@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3';
 
-import AppearanceTabs from '@/components/AppearanceTabs.vue';
-import HeadingSmall from '@/components/HeadingSmall.vue';
-import { type BreadcrumbItem } from '@/types';
+import AppearanceTabs from '@/shared/components/AppearanceTabs.vue';
+import HeadingSmall from '@/shared/components/HeadingSmall.vue';
+import { type BreadcrumbItem } from '@/shared/types';
 
-import AppLayout from '@/layouts/AppLayout.vue';
-import SettingsLayout from '@/layouts/settings/Layout.vue';
+import AppLayout from '@/shared/layouts/AppLayout.vue';
+import SettingsLayout from '@/shared/layouts/settings/Layout.vue';
 import { edit } from '@/routes/appearance';
 
 const breadcrumbItems: BreadcrumbItem[] = [

@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { Button } from '@/components/ui/button';
-import { Spinner } from '@/components/ui/spinner';
-import AppLayout from '@/layouts/AppLayout.vue';
+import { Button } from '@/shared/components/ui/button';
+import { Spinner } from '@/shared/components/ui/spinner';
+import AppLayout from '@/shared/layouts/AppLayout.vue';
 import { index, store } from '@/routes/counterAssignments';
 import { Head, useForm } from '@inertiajs/vue3';
 import { CheckCircle2, Monitor, Users } from 'lucide-vue-next';
 
 // Importamos componentes para los Avatares
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback } from '@/shared/components/ui/avatar';
 
 defineProps<{
     counters: Array<{

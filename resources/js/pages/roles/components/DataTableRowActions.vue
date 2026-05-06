@@ -14,8 +14,8 @@ import {
     AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogTitle,
-} from '@/components/ui/alert-dialog';
-import { Button } from '@/components/ui/button';
+} from '@/shared/components/ui/alert-dialog';
+import { Button } from '@/shared/components/ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -23,10 +23,10 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from '@/shared/components/ui/dropdown-menu';
 
 // Rutas e Interfaces
-import { usePermissions } from '@/composables/usePermissions';
+import { usePermissions } from '@/shared/composables/usePermissions';
 import { destroy, edit } from '@/routes/roles';
 import type { Role } from '../columns';
 

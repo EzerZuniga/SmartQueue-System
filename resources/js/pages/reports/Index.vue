@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import DateRangePicker from '@/components/DateRangePicker.vue';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import AppLayout from '@/layouts/AppLayout.vue';
-import { type BreadcrumbItem } from '@/types';
+import DateRangePicker from '@/shared/components/DateRangePicker.vue';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/shared/components/ui/tabs';
+import AppLayout from '@/shared/layouts/AppLayout.vue';
+import { type BreadcrumbItem } from '@/shared/types';
 import { Head } from '@inertiajs/vue3';
 import { getLocalTimeZone, today } from '@internationalized/date';
 import type { DateRange } from 'radix-vue';

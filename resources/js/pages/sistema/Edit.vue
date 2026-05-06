@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import InputError from '@/components/InputError.vue';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Spinner } from '@/components/ui/spinner';
-import { usePermissions } from '@/composables/usePermissions';
-import AppLayout from '@/layouts/AppLayout.vue';
+import InputError from '@/shared/components/InputError.vue';
+import { Button } from '@/shared/components/ui/button';
+import { Input } from '@/shared/components/ui/input';
+import { Label } from '@/shared/components/ui/label';
+import { Spinner } from '@/shared/components/ui/spinner';
+import { usePermissions } from '@/shared/composables/usePermissions';
+import AppLayout from '@/shared/layouts/AppLayout.vue';
 import { regenerate_token, update } from '@/routes/settings';
 import { Head, router, useForm } from '@inertiajs/vue3'; // Agregamos router
 import {

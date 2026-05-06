@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import Pagination from '@/components/Pagination.vue';
-import { Button } from '@/components/ui/button';
+import Pagination from '@/shared/components/Pagination.vue';
+import { Button } from '@/shared/components/ui/button';
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from '@/components/ui/select';
-import { usePermissions } from '@/composables/usePermissions';
-import AppLayout from '@/layouts/AppLayout.vue';
+} from '@/shared/components/ui/select';
+import { usePermissions } from '@/shared/composables/usePermissions';
+import AppLayout from '@/shared/layouts/AppLayout.vue';
 import { create, index } from '@/routes/services';
 import { Head, Link, router } from '@inertiajs/vue3';
 import { PlusCircleIcon } from 'lucide-vue-next';

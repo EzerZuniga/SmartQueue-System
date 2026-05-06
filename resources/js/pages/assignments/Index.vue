@@ -9,10 +9,10 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogTrigger,
-} from '@/components/ui/alert-dialog';
-import { Button } from '@/components/ui/button';
-import { usePermissions } from '@/composables/usePermissions';
-import AppLayout from '@/layouts/AppLayout.vue';
+} from '@/shared/components/ui/alert-dialog';
+import { Button } from '@/shared/components/ui/button';
+import { usePermissions } from '@/shared/composables/usePermissions';
+import AppLayout from '@/shared/layouts/AppLayout.vue';
 import { destroy } from '@/routes/counterAssignments';
 import { Head, router } from '@inertiajs/vue3';
 import {

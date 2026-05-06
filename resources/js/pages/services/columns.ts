@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button } from '@/shared/components/ui/button';
 import type { ColumnDef } from '@tanstack/vue-table';
 import { ArrowUpDown, Tv } from 'lucide-vue-next';
 import { h } from 'vue';

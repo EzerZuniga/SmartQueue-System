@@ -14,13 +14,13 @@ import {
 } from '@tanstack/vue-table';
 import { ref, watch } from 'vue';
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/shared/components/ui/button';
 import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
     DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from '@/shared/components/ui/dropdown-menu';
 import {
     Empty,
     EmptyContent,
@@ -28,8 +28,8 @@ import {
     EmptyHeader,
     EmptyMedia,
     EmptyTitle,
-} from '@/components/ui/empty'; // Asegúrate de tener este componente Shadcn
-import { Input } from '@/components/ui/input';
+} from '@/shared/components/ui/empty'; // Asegúrate de tener este componente Shadcn
+import { Input } from '@/shared/components/ui/input';
 import {
     Table,
     TableBody,
@@ -37,8 +37,8 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from '@/components/ui/table';
-import { valueUpdater } from '@/lib/utils';
+} from '@/shared/components/ui/table';
+import { valueUpdater } from '@/shared/lib/utils';
 import { ChevronDown, Layers } from 'lucide-vue-next'; // Cambié icono a Layers para Servicios
 
 const props = defineProps<{

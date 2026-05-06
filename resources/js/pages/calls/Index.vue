@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Badge } from '@/shared/components/ui/badge';
+import { Button } from '@/shared/components/ui/button';
 import {
     Dialog,
     DialogContent,
@@ -8,9 +8,9 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
-} from '@/components/ui/dialog';
-import Spinner from '@/components/ui/spinner/Spinner.vue'; // Asegúrate de importar tu Spinner
-import AppLayout from '@/layouts/AppLayout.vue';
+} from '@/shared/components/ui/dialog';
+import Spinner from '@/shared/components/ui/spinner/Spinner.vue'; // Asegúrate de importar tu Spinner
+import AppLayout from '@/shared/layouts/AppLayout.vue';
 import { abandon, callNext, finish, recall, start } from '@/routes/calls';
 import { Head, router } from '@inertiajs/vue3';
 import {

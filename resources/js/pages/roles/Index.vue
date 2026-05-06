@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Pagination from '@/components/Pagination.vue';
-import { Button } from '@/components/ui/button';
-import AppLayout from '@/layouts/AppLayout.vue';
+import Pagination from '@/shared/components/Pagination.vue';
+import { Button } from '@/shared/components/ui/button';
+import AppLayout from '@/shared/layouts/AppLayout.vue';
 import { create, index } from '@/routes/roles';
-import { type BreadcrumbItem } from '@/types';
+import { type BreadcrumbItem } from '@/shared/types';
 import { Head, Link, router } from '@inertiajs/vue3';
 import { PlusCircleIcon } from 'lucide-vue-next';
 import { columns, type Role } from './columns';
@@ -16,8 +16,8 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from '@/components/ui/select';
-import { usePermissions } from '@/composables/usePermissions';
+} from '@/shared/components/ui/select';
+import { usePermissions } from '@/shared/composables/usePermissions';
 
 const { can } = usePermissions();
 

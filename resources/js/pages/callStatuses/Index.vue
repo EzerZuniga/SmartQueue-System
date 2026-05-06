@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { Badge } from '@/components/ui/badge';
+import { Badge } from '@/shared/components/ui/badge';
 import {
     Card,
     CardContent,
     CardFooter,
     CardHeader,
     CardTitle,
-} from '@/components/ui/card';
-import AppLayout from '@/layouts/AppLayout.vue';
+} from '@/shared/components/ui/card';
+import AppLayout from '@/shared/layouts/AppLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
 // Íconos de Lucide
-import { BreadcrumbItem } from '@/types';
+import { BreadcrumbItem } from '@/shared/types';
 import {
     Activity,
     CheckCircle2,

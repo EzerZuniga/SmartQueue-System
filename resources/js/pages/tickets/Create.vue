@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import NumpadModal from '@/components/kiosk/NumpadModal.vue';
-import { Button } from '@/components/ui/button';
+import NumpadModal from '@/shared/components/kiosk/NumpadModal.vue';
+import { Button } from '@/shared/components/ui/button';
 import {
     Dialog,
     DialogContent,
     DialogDescription,
     DialogFooter,
     DialogTitle,
-} from '@/components/ui/dialog';
-import { Spinner } from '@/components/ui/spinner';
+} from '@/shared/components/ui/dialog';
+import { Spinner } from '@/shared/components/ui/spinner';
 import { store } from '@/routes/tickets';
 import { Head, router, useForm, usePage } from '@inertiajs/vue3';
 import {

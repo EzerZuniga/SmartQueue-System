@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import HeadingSmall from '@/components/HeadingSmall.vue';
-import InputError from '@/components/InputError.vue';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Spinner } from '@/components/ui/spinner';
-import AppLayout from '@/layouts/AppLayout.vue';
+import HeadingSmall from '@/shared/components/HeadingSmall.vue';
+import InputError from '@/shared/components/InputError.vue';
+import { Button } from '@/shared/components/ui/button';
+import { Input } from '@/shared/components/ui/input';
+import { Label } from '@/shared/components/ui/label';
+import { Spinner } from '@/shared/components/ui/spinner';
+import AppLayout from '@/shared/layouts/AppLayout.vue';
 import { index, store } from '@/routes/counters';
-import { type BreadcrumbItem } from '@/types';
+import { type BreadcrumbItem } from '@/shared/types';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
 const breadcrumbs: BreadcrumbItem[] = [
